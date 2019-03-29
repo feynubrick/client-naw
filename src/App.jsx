@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { MyMNA, MNA, Party, Bill } from "./pages";
 import Menu from "./components/Menu";
+import { MyMNA, MNA, Party, Bill } from "./pages";
 import "bootstrap/dist/css/bootstrap.css";
 
 class App extends Component {
