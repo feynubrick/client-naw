@@ -7,6 +7,10 @@ export {
 }
 from './MyMNA';
 export {
+  default as MNAAbout
+}
+from './MNAAbout';
+export {
   default as Party
 }
 from './Party';
