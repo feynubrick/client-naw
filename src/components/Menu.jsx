@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Menu = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-md navbar-light bg-light">
       <NavLink className="navbar-brand" to="/">
         국회 Watcher
       </NavLink>
@@ -11,15 +11,15 @@ const Menu = () => {
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01"
+        data-target="#navbarToggler"
+        aria-controls="navbarToggler"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span className="navbar-toggler-icon" />
       </button>
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+      <div className="collapse navbar-collapse" id="navbarToggler">
+        <ul className="navbar-nav mr-auto mt-2 mt-md-0">
           <li className="nav-item">
             <NavLink className="nav-link" to="/mymna">
               내 의원
@@ -41,7 +41,7 @@ const Menu = () => {
             </NavLink>
           </li>
         </ul>
-        <ul className="navbar-nav mt-2 mt-lg-0">
+        <ul className="navbar-nav mt-2 mt-md-0">
           <li className="nav-item">
             <i className="fas fa-user"> 로그인</i>
           </li>
