@@ -1,9 +1,7 @@
 import React from "react";
 
-const SocialButton = () => {
-  return (
-    <div>
-      <h2>SocialButton</h2>
-    </div>
-  );
+const SocialButton = ({ content }) => {
+  return <div>{content}</div>;
 };
+
+export default SocialButton;
