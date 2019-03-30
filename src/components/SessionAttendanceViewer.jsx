@@ -1,10 +1,11 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
 
 const SessionAttendanceViewer = ({ mnaId, isMainSession }) => {
   const sessionType = isMainSession ? "본회의" : "상임위원회";
 
   return (
-    <div>
+    <div class="col">
       <h1>SessionAttendanceViewer</h1>
       <h2>{sessionType}</h2>
       {`mnaId: ${mnaId}`}

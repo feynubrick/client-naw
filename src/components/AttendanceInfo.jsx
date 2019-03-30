@@ -6,7 +6,7 @@ const AttendanceInfo = ({ id, name }) => {
     <div>
       <h1>의원 출석정보</h1>
       <h2>{name}</h2>
-      <div>
+      <div class="row">
         <SessionAttendanceViewer mnaId={id} isMainSession={false} />
         <SessionAttendanceViewer mnaId={id} isMainSession={true} />
       </div>
