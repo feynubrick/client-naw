@@ -5,7 +5,7 @@ const MNA = () => {
   return (
     <div>
       의원 페이지
-      <MNADetail mnaId={0} />
+      <MNADetail mnaId={3} />
     </div>
   );
 };

@@ -12,7 +12,7 @@ const CategoryConcentricGraph = ({ title }) => {
           "https://www.conceptdraw.com/How-To-Guide/picture/GRAPHS-AND-CHARTS-Pie-charts-Sector-weightings-Sample.png"
         }
         alt={`concentric_graph`}
-        class="img-thumbnail"
+        className="img-thumbnail"
       />
     </div>
   );
