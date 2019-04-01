@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div>
         <Menu />
-        <Container>
+        <Container className="mt-4">
           <Switch>
             <Route exact path="/" />
             <Route path="/mymna" component={MyMNA} />

@@ -1,7 +1,7 @@
 import React from "react";
-
+import PartyContainer from "../containers/PartyContainer";
 const Party = () => {
-  return <div>정당 페이지</div>;
+  return <PartyContainer />;
 };
 
 export default Party;
