@@ -1,7 +1,8 @@
 import React from "react";
+import PaginatedBillList from "../containers/PaginatedBillList";
 
 const Bill = () => {
-  return <div>법안 페이지</div>;
+  return <PaginatedBillList />;
 };
 
 export default Bill;
