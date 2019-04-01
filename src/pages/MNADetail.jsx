@@ -3,6 +3,7 @@ import axios from "axios";
 import BasicInfo from "../components/BasicInfo";
 import AttendanceInfo from "../components/AttendanceInfo";
 import MNABillInfo from "../components/MNABillInfo";
+import serverUrl from "../serverInfo";
 // 의원 페이지
 class MNADetail extends React.Component {
   constructor(props) {
@@ -12,16 +13,10 @@ class MNADetail extends React.Component {
   }
 
   componentDidMount() {
-    console.log(`this.mnaId: ${this.state.mnaId}`);
     axios
-      .get(
-        `http://ec2-13-209-40-96.ap-northeast-2.compute.amazonaws.com:3000/mna/${
-          this.mnaId
-        }`
-      )
+      .get(`${serverUrl}/mna/${this.mnaId}`)
       .then(res => {
         this.setState({ mnaData: res.data });
-        console.log(this.mnaData);
       })
       .catch(err => {
         console.log(`ERROR occurred!!! => ${err.message}`);
@@ -29,7 +24,6 @@ class MNADetail extends React.Component {
   }
 
   render() {
-    console.log("rendering...");
     return this.state.mnaData ? (
       <div>
         <BasicInfo {...this.state.mnaData} />
