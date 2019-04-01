@@ -5,12 +5,12 @@ const SessionAttendanceViewer = ({ mnaId, isMainSession }) => {
   const sessionType = isMainSession ? "본회의" : "상임위원회";
 
   return (
-    <div class="col">
+    <div className="col">
       <h1>SessionAttendanceViewer</h1>
       <h2>{sessionType}</h2>
       {`mnaId: ${mnaId}`}
       출석률 81% (33위/299명)
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>

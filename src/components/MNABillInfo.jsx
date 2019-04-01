@@ -8,8 +8,8 @@ const MNABillInfo = ({ id, name }) => {
     <div>
       <h2>MNABillInfo</h2>
       <h3>{`mnaName: ${name}, mnaId: ${id}`}</h3>
-      <div class="row">
-        <div class="col">
+      <div className="row">
+        <div className="col">
           <table>
             <tbody>
               <tr>
@@ -24,7 +24,7 @@ const MNABillInfo = ({ id, name }) => {
           </table>
           <CategoryConcentricGraph title={`제출법안의 상임위별 비율`} />
         </div>
-        <div class="col">
+        <div className="col">
           <CategoryListGraph title={`제출법안 상태`} />
         </div>
       </div>

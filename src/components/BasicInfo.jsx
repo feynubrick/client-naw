@@ -17,11 +17,11 @@ const BasicInfo = ({
   fb
 }) => {
   return (
-    <div class="container-fluid">
+    <div className="container-fluid">
       <h2>기본정보</h2>
-      <div class="row">
-        <div class="col-8">
-          <table class="table">
+      <div className="row">
+        <div className="col-8">
+          <table className="table">
             <tbody>
               <tr>
                 <th scope="row">이름</th>
@@ -50,10 +50,10 @@ const BasicInfo = ({
             </tbody>
           </table>
         </div>
-        <div class="col-4">
-          <img src={photo} alt={`photo_${id}`} class="img-thumbnail" />
+        <div className="col-4">
+          <img src={photo} alt={`photo_${id}`} className="img-thumbnail" />
           {[phone, address, blog, twtr, fb].map(info => (
-            <SocialButton content={info} />
+            <SocialButton key={`${info}`} content={info} />
           ))}
         </div>
       </div>

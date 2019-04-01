@@ -12,7 +12,7 @@ const CategoryListGraph = ({ title }) => {
           "https://www.copypress.com/wp-content/uploads/2018/05/ultimate-list-of-infographic-graph-makers-560x315.jpg"
         }
         alt={`list_graph`}
-        class="img-thumbnail"
+        className="img-thumbnail"
       />
     </div>
   );
