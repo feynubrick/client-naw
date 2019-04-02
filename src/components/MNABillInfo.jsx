@@ -1,6 +1,6 @@
 import React from "react";
-import CategoryConcentricGraph from "./CategoryConcentricGraph";
-import CategoryListGraph from "./CategoryListGraph";
+import CategoryConcentricGraph from "./PieChart";
+import PieChart from "./CategoryListGraph";
 import "bootstrap/dist/css/bootstrap.css";
 
 const MNABillInfo = ({ id, name }) => {
@@ -25,7 +25,7 @@ const MNABillInfo = ({ id, name }) => {
           <CategoryConcentricGraph title={`제출법안의 상임위별 비율`} />
         </div>
         <div className="col">
-          <CategoryListGraph title={`제출법안 상태`} />
+          <PieChart title={`제출법안 상태`} />
         </div>
       </div>
     </div>
