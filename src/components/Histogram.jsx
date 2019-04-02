@@ -1,10 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-const CategoryListGraph = ({ title }) => {
+const Histogram = ({ title }) => {
   return (
     <div>
-      <h4>CategoryListGraph</h4>
+      <h4>Histogram</h4>
       {title}
 
       <img
@@ -18,4 +18,4 @@ const CategoryListGraph = ({ title }) => {
   );
 };
 
-export default CategoryListGraph;
+export default Histogram;
