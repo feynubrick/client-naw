@@ -1,7 +1,7 @@
 import React from "react";
 import fakedataBills from "./fakedataBill";
 import BillList from "../components/BillList";
-import CategoryConcentricGraph from "../components/CategoryConcentricGraph";
+import PieChart from "../components/PieChart";
 import "bootstrap/dist/css/bootstrap.css";
 
 class PaginatedBillList extends React.Component {
@@ -21,7 +21,7 @@ class PaginatedBillList extends React.Component {
           국회는 의안 심의를 통해 헌법이 요구하는 국회 기능을 수행하고 국민의
           의사를 국정에 반영합니다.
         </p>
-        <CategoryConcentricGraph />
+        <PieChart />
         <BillList bills={fakedataBills} />
       </div>
     );
