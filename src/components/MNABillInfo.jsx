@@ -1,6 +1,6 @@
 import React from "react";
 import CategoryConcentricGraph from "./PieChart";
-import PieChart from "./CategoryListGraph";
+import PieChart from "./Histogram";
 import "bootstrap/dist/css/bootstrap.css";
 
 const MNABillInfo = ({ id, name }) => {
