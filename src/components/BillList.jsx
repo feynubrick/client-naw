@@ -15,11 +15,11 @@ const BillList = ({ bills }) => {
     <table className="table">
       <thead>
         <tr>
-          <th scope="col">발의 날짜</th>
-          <th scope="col">법안 이름</th>
-          <th scope="col">발의자</th>
-          <th scope="col">상임위원회</th>
-          <th scope="col">처리상태</th>
+          {heading.map(text => (
+            <th key={text} scope="col">
+              {text}
+            </th>
+          ))}
         </tr>
       </thead>
       <tbody>

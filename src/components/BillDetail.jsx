@@ -4,19 +4,6 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const BillDetail = function({ match }) {
   // match.params.billId
-  const members = [
-    "박완주(더불어민주당/朴完柱)",
-    "기동민(더불어민주당/奇東旻)",
-    "박정(더불어민주당/朴釘)",
-    "박지원(민주평화당/朴智元)",
-    "백혜련(더불어민주당/白惠蓮)",
-    "서영교(더불어민주당/徐瑛敎)",
-    "송갑석(더불어민주당/宋甲錫)",
-    "신창현(더불어민주당/申昌賢)",
-    "인재근(더불어민주당/印在謹)",
-    "장정숙(바른미래당/張貞淑)"
-  ];
-
   return (
     <div>
       <div className="display-3 text-center">

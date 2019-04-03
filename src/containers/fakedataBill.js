@@ -8,7 +8,9 @@ const FakeDataBill = function(date, name, makerName, compt, status) {
   this.status = status;
 };
 
-const fakedataBills = [
+const fakedataBills = {};
+
+fakedataBills.bills = [
   new FakeDataBill(
     "2019-03-29",
     "수목원·정원의 조성 및 진흥에 관한 법률 일부개정법률안(박완주의원 등 10인)",
@@ -31,5 +33,8 @@ const fakedataBills = [
     "계류"
   )
 ];
+
+fakedataBills.updateDate = "2019-04-01";
+fakedataBills.totalNumOfBills = 19653;
 
 export default fakedataBills;
