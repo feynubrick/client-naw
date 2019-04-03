@@ -3,13 +3,13 @@ import BillItem from "./BillItem";
 import "bootstrap/dist/css/bootstrap.css";
 
 const BillList = ({ bills }) => {
-  const heading = {
-    date: "발의 날짜",
-    name: "법안 이름",
-    makerName: "발의자",
-    compt: "상임위원회",
-    status: "처리상태"
-  };
+  const heading = [
+    "발의 날짜",
+    "법안 이름",
+    "발의자",
+    "상임위원회",
+    "처리상태"
+  ];
 
   return (
     <table className="table">
@@ -24,7 +24,7 @@ const BillList = ({ bills }) => {
       </thead>
       <tbody>
         {bills.map(bill => (
-          <BillItem {...bill} key={bill.name} />
+          <BillItem {...bill} key={bill.id} />
         ))}
       </tbody>
     </table>
