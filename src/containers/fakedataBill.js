@@ -1,4 +1,6 @@
+let id = 0;
 const FakeDataBill = function(date, name, makerName, compt, status) {
+  this.id = id++;
   this.date = date;
   this.name = name;
   this.makerName = makerName;
