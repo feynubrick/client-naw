@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Col, Row } from "react-bootstrap";
 import PartyRankingList from "../components/PartyRankingList";
 import PartyInfo from "../components/PartyInfo";
-import HistogramChartWrap from "../components/HistogramChartWrap";
+import OptionHistogramChart from "../components/OptionHistogramChart";
 class PartyContainer extends Component {
   render() {
     return (
@@ -20,7 +20,7 @@ class PartyContainer extends Component {
               homepage: "http://bareunmirae.kr"
             }}
           />
-          <HistogramChartWrap chartName="정당별 출석률" />
+          <OptionHistogramChart options={["출석률", "의안 제출 수"]} />
         </Col>
       </Row>
     );
