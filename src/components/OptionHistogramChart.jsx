@@ -14,7 +14,7 @@ export default class OptionHistogramChart extends Component {
 
     return (
       <div>
-        <div class="btn-group" role="group" aria-label="Basic example">
+        <div class="btn-group" role="group">
           {options.map((option, i) => {
             return (
               <button
