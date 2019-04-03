@@ -19,6 +19,6 @@ export default class PieChartController extends React.Component {
 
   render() {
     console.log("PieChartController: render");
-    return <PieChart dataSet={this.state.dataSet} />;
+    return <PieChart name={this.props.name} dataSet={this.state.dataSet} />;
   }
 }

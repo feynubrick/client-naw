@@ -22,7 +22,10 @@ const MNABillInfo = ({ id, name }) => {
               </tr>
             </tbody>
           </table>
-          <PieChartController title={`제출법안의 상임위별 비율`} />
+          <PieChartController
+            name={`pie-chart-bill-type-mna-${id}`}
+            title={`제출법안의 상임위별 비율`}
+          />
         </div>
         <div className="col">
           <Histogram title={`제출법안 상태`} />

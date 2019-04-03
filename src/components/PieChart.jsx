@@ -20,6 +20,6 @@ export default class PieChart extends React.Component {
 
   render() {
     console.log("PieChart: render");
-    return <div className="viz" />;
+    return <div id={this.props.name} />;
   }
 }

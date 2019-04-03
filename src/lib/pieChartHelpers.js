@@ -17,7 +17,7 @@ const draw = props => {
     .outerRadius(outerRadius);
 
   var svg = d3
-    .selectAll(".viz")
+    .select(`#${props.name}`)
     .append("svg")
     .attr("width", w)
     .attr("height", h);
