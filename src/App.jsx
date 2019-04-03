@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div>
         <Menu />
-        <Container className="mt-4">
+        <div className="mt-4 container">
           <Switch>
             <Route exact path="/" />
             <Route path="/mymna" component={MyMNA} />
@@ -19,7 +19,7 @@ class App extends Component {
             <Route path="/party" component={Party} />
             <Route path="/bill" component={Bill} />
           </Switch>
-        </Container>
+        </div>
       </div>
     );
   }

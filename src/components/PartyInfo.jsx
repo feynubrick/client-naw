@@ -9,7 +9,9 @@ const PartyInfo = ({ party }) => {
       <div className="col-3">의원수: </div>
       <div className="col-9">{`${numberOfMember}명 (${rank}위)`}</div>
       <div className="col-12">홈페이지 주소: {homepage}</div>
-      <img src={logo} />
+      <div className="col-12">
+        <img src={logo} alt={partyName} />
+      </div>
     </div>
   );
 };
