@@ -10,7 +10,7 @@ export default class OptionHistogramChart extends Component {
   };
 
   render() {
-    const { options, chartName } = this.props;
+    const { options, data } = this.props;
 
     return (
       <div>
@@ -24,12 +24,14 @@ export default class OptionHistogramChart extends Component {
                   this.onOptionBtnClick(i);
                 }}
               >
-                {option}
+                {option.comment}
               </button>
             );
           })}
         </div>
-        <HistogramChartWrap />
+        <HistogramChartWrap
+          data={data[options[this.state.selectedBtnId].key]}
+        />
       </div>
     );
   }
