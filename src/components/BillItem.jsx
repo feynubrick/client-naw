@@ -2,17 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 
-const BillItem = ({ id, date, name, makerName, compt, status }) => {
+const BillItem = ({
+  id,
+  date,
+  name,
+  primaryLawMakerName,
+  committee,
+  status
+}) => {
   return (
     <tr>
       <td>{date}</td>
       <td>
-        <Link to={`/bill/${id}`} name={name} compt={compt}>
-          {name}
-        </Link>
+        <Link to={`/bill/${id}`}>{name}</Link>
       </td>
-      <td>{makerName}</td>
-      <td>{compt}</td>
+      <td>{primaryLawMakerName}</td>
+      <td>{committee}</td>
       <td>{status}</td>
     </tr>
   );
