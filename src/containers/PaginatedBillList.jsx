@@ -1,24 +1,40 @@
 import React from "react";
-import { bills, updateDate, totalNumOfBills } from "./fakedataBill";
+import {
+  bills,
+  updateDate,
+  totalNumOfBills,
+  billsPerCommittee
+} from "./fakedataBill";
 import BillList from "../components/BillList";
 import "bootstrap/dist/css/bootstrap.css";
-import PieChartController from "./PieChartController";
+import PieChart from "../components/PieChart";
 
 class PaginatedBillList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { bills: null, updateDate: null, totalNumOfBills: null };
+    this.state = {
+      bills: null,
+      updateDate: null,
+      totalNumOfBills: null,
+      billsPerCommittee: null
+    };
   }
 
   componentDidMount() {
     this.setState({
       bills: bills,
       updateDate: updateDate,
-      totalNumOfBills: totalNumOfBills
+      totalNumOfBills: totalNumOfBills,
+      billsPerCommittee: billsPerCommittee
     });
   }
 
   render() {
+    if (this.state.billsPerCommittee) {
+      var dataSet = this.state.billsPerCommittee.map(bill => bill.number);
+      var titles = this.state.billsPerCommittee.map(bill => bill.committee);
+    }
+
     return this.state.bills ? (
       <div className={`container`}>
         <h1>20대 국회 접수의안 총 {this.state.totalNumOfBills}개</h1>
@@ -32,7 +48,11 @@ class PaginatedBillList extends React.Component {
           국회는 의안 심의를 통해 헌법이 요구하는 국회 기능을 수행하고 국민의
           의사를 국정에 반영합니다.
         </p>
-        <PieChartController name="pie-chart-bill-list" />
+        <PieChart
+          name="pie-chart-bill-list"
+          dataSet={dataSet}
+          titles={titles}
+        />
         <BillList bills={bills} />
       </div>
     ) : null;

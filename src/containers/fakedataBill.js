@@ -108,7 +108,22 @@ const bills = [
   )
 ];
 
+const billsPerCommittee = [
+  {
+    committee: "국토교통위원회",
+    number: 1500
+  },
+  {
+    committee: "보건복지위원회",
+    number: 1100
+  },
+  {
+    committee: "농림축산식품해양수산위원회",
+    number: 700
+  }
+];
+
 const updateDate = "2019-04-01";
 const totalNumOfBills = 19653;
 
-export { bills, updateDate, totalNumOfBills };
+export { bills, updateDate, totalNumOfBills, billsPerCommittee };
