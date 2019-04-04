@@ -1,11 +1,10 @@
 import React from "react";
-import MNADetail from "./MNADetail";
+import MNAContainer from "../containers/MNAContainer";
 // 의원 페이지
 const MNA = () => {
   return (
     <div>
-      의원 페이지
-      <MNADetail mnaId={3} />
+      <MNAContainer />
     </div>
   );
 };
