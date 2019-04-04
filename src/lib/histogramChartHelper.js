@@ -3,6 +3,7 @@ import * as d3 from "d3";
 const drawHistogram = props => {
 
   d3.selectAll('.histo-viz > g').remove();
+
   const {
     data
   } = props;
@@ -11,49 +12,9 @@ const drawHistogram = props => {
   //     "바른정당": 5,
   //     "자유한국당": 3,
   //     name: "0 ~ 10%",
-  //   }, {
-  //     "바른정당": 2,
-  //     "자유한국당": 9,
-  //     name: "11 ~ 20%",
-  //   }, {
-  //     "바른정당": 12,
-  //     "자유한국당": 13,
-  //     name: "21 ~ 30%",
-  //   }, {
-  //     "바른정당": 1,
-  //     "자유한국당": 2,
-  //     name: "31 ~ 40%",
-  //   }, {
-  //     "바른정당": 5,
-  //     "자유한국당": 3,
-  //     name: "41 ~ 50%",
-  //   }, {
-  //     "바른정당": 2,
-  //     name: "51 ~ 60%",
-  //   }, {
-  //     "바른정당": 12,
-  //     "자유한국당": 13,
-  //     name: "61 ~ 70%",
-  //   }, {
-  //     "바른정당": 1,
-  //     "자유한국당": 2,
-  //     name: "71% ~ 80%",
-  //   }, {
-  //     "바른정당": 1,
-  //     "자유한국당": 2,
-  //     name: "81% ~ 90%",
-  //   }, {
-  //     "바른정당": 1,
-  //     "자유한국당": 2,
-  //     name: "91% ~ 100%",
-  //   },
-  //   {
-  //     "바른정당": 1,
-  //     "자유한국당": 2,
-  //     billCount: "0~10"
   //   }
   // ];
-  data["group"] = ["name", "count"]
+  //data["group"] = ["name", "count"]
   console.log(data, '!@#')
   const svg = d3.select("svg.histo-viz");
   let series = d3.stack().keys(data.group.slice(1))(data);

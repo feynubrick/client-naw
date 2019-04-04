@@ -1,7 +1,10 @@
 export default function makeChartData(data, groupBy) {
-  const result = [];
-  result["attendanceRate"] = [];
-  result["billCount"] = [];
+  const result = {
+    attendanceRate: [],
+    billCount: []
+  };
+  result.attendanceRate["group"] = ["name"];
+  result.billCount["group"] = ["name"];
 
   const billCountYDomain = data.reduce(
     (acc, curr) => {
@@ -29,20 +32,32 @@ export default function makeChartData(data, groupBy) {
   }
 
   data.forEach(data => {
+    const group = groupBy || "count";
+    if (!result.attendanceRate["group"].includes(data[group])) {
+      result.attendanceRate["group"].push(data[group]);
+    }
+    if (!result.billCount["group"].includes(data[group])) {
+      result.billCount["group"].push(data[group]);
+    }
+    console.log(result.billCount["group"], "!")
     const attendanceIndex = Math.floor(data.attendanceRate / 10) - 1;
     let billIndex =
       Math.floor(
         data.billCount /
         ((billCountYDomain.max - billCountYDomain.min) / 10)
       ) - 1;
-    if (billIndex < 0) billIndex++;
-    result["attendanceRate"][attendanceIndex]["count"] =
-      result["attendanceRate"][attendanceIndex]["count"] || 0;
-    result["attendanceRate"][attendanceIndex]["count"]++;
 
-    result["billCount"][billIndex]["count"] =
-      result["billCount"][billIndex]["count"] || 0;
-    result["billCount"][billIndex]["count"]++;
+    if (billIndex < 0) billIndex++;
+
+    result["attendanceRate"][attendanceIndex][data[group]] =
+      result["attendanceRate"][attendanceIndex][data[group]] || 0;
+    result["attendanceRate"][attendanceIndex][data[group]]++;
+
+    result["billCount"][billIndex][data[group]] =
+      result["billCount"][billIndex][data[group]] || 0;
+    result["billCount"][billIndex][data[group]]++;
   });
+
+  console.log(result);
   return result;
 }
