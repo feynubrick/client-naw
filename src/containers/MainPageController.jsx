@@ -19,7 +19,9 @@ export default class MainPageController extends React.Component {
       var numOfMembersPerParty = this.state.data.numOfMembersPerParty.map(
         item => item.numOfMembers
       );
-      var titles = this.state.data.numOfMembersPerParty.map(item => item.name);
+      var partyNames = this.state.data.numOfMembersPerParty.map(
+        item => item.name
+      );
       var colors = this.state.data.numOfMembersPerParty.map(item => item.color);
     }
 
@@ -27,17 +29,19 @@ export default class MainPageController extends React.Component {
       <div>
         <RankingViewer
           title="출석률 상위 5명"
+          headings={["순위", "이름", "정당", "출석률"]}
           data={this.state.data.attendanceRateTop5}
         />
         <RankingViewer
           title="출석률 하위 5명"
+          headings={["순위", "이름", "정당", "출석률"]}
           data={this.state.data.attendanceRateBot5}
         />
         <div>
           <PieChart
             name="members-per-party"
             dataSet={numOfMembersPerParty}
-            titles={titles}
+            titles={partyNames}
             colors={colors}
           />
         </div>
