@@ -210,21 +210,44 @@ const mnaDetailData = {
   name: "나경원",
   chinesename: "羅卿瑗",
   photo: "http://www.assembly.go.kr/photo/9770903.jpg",
-  party_id: 2,
+  party: {
+    id: 2,
+    name: "자유한국당",
+    logo: "http://www.libertykoreaparty.kr/images/introduce/logo/colorset.gif",
+    color: "#C9151E"
+  },
   local: "서울 동작구을",
   stdcomt: "국회운영위원회, 기획재정위원회, 정보위원회",
   phone: "02-784-3103",
   address: "의원회관 450호",
   email: "nakw@na.go.kr",
-  mna_url: "https://twitter.com/nakw",
+  mnaUrl: "https://twitter.com/nakw",
   history: `	서울대학교 법과대학 졸업
   서울대학교대학원 법학 박사 수료
   주요경력	한나라당 최고위원
   부산·인천지방법원, 서울행정법원 판사`,
   stdcomtAttendanceRate: 0.88,
   stdcomtAttendanceRatePosition: 20,
+  totalNumOfMNA: 299,
   stdcomtBillSubmitCount: 20,
   stdcomtBillSubmitCountPosition: 20,
+  sessions: [
+    {
+      date: "2019-01-02",
+      name: "법제사법위원회",
+      status: "출석"
+    },
+    {
+      date: "2019-01-02",
+      name: "교육위원회",
+      status: "결석"
+    },
+    {
+      date: "2019-01-02",
+      name: "환경노동위원회",
+      status: "청가"
+    }
+  ],
   billsPerCommittee: [
     { name: "법제사법위원회", value: 8 },
     { name: "교육위원회", value: 5 },

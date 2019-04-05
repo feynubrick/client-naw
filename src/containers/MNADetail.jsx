@@ -2,6 +2,7 @@ import React from "react";
 import BasicInfo from "../components/BasicInfo";
 import AttendanceInfo from "../components/AttendanceInfo";
 import MNABillInfo from "../components/MNABillInfo";
+import { mnaDetailData } from "./fakedata";
 
 export default class MNADetail extends React.Component {
   constructor(props) {
@@ -9,29 +10,24 @@ export default class MNADetail extends React.Component {
 
     this.state = {
       mnaId: props.match.params.mnaId,
-      mnaProfile: null,
-      attendanceRate: null,
-      attendanceRatePosition: null,
-      billSubmitCount: null,
-      billSubmitCountPosition: null,
-      billsPerCommittee: null,
-      billsPerStatus: null
+      mnaData: null
     };
   }
 
   componentDidMount() {
-    axios
-      .get(`${serverUrl}/mna/${this.state.mnaId}`)
-      .then(res => {
-        this.setState({ mnaData: res.data });
-      })
-      .catch(err => {
-        console.log(`ERROR occurred!!! => ${err.message}`);
-      });
+    // axios
+    //   .get(`${serverUrl}/mna/${this.state.mnaId}`)
+    //   .then(res => {
+    //     this.setState({ mnaData: res.data });
+    //   })
+    //   .catch(err => {
+    //     console.log(`ERROR occurred!!! => ${err.message}`);
+    //   });
+    this.setState({ mnaData: mnaDetailData });
   }
 
   render() {
-    return this.state.mnaProfile ? (
+    return this.state.mnaData ? (
       <div>
         <BasicInfo {...this.state.mnaData} />
         <AttendanceInfo {...this.state.mnaData} />
