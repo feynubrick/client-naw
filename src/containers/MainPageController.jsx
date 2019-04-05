@@ -1,36 +1,50 @@
 import React from "react";
 import PieChart from "../components/PieChart";
-// import HistogramChartWrap from "../components/HistogramChartWrap";
-import partyMembers from "./fakedataParty";
+import { mainData } from "./fakedata";
+import RankingViewer from "../components/RankingViewer";
 
 export default class MainPageController extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { partyMemberData: null };
+    this.state = { data: null };
   }
 
   componentDidMount() {
-    console.log(partyMembers);
-    this.setState({ partyMemberData: partyMembers });
+    this.setState({ data: mainData });
   }
 
   render() {
-    if (this.state.partyMemberData) {
-      var dataSet = this.state.partyMemberData.map(party => party.numOfMembers);
-      var titles = this.state.partyMemberData.map(party => party.name);
-      var colors = this.state.partyMemberData.map(party => party.color);
+    if (this.state.data) {
+      var numOfMembersPerParty = this.state.data.numOfMembersPerParty.map(
+        item => item.numOfMembers
+      );
+      var partyNames = this.state.data.numOfMembersPerParty.map(
+        item => item.name
+      );
+      var colors = this.state.data.numOfMembersPerParty.map(item => item.color);
     }
 
-    return this.state.partyMemberData ? (
+    return this.state.data ? (
       <div>
-        정당별 의원수
-        <PieChart
-          name="members-per-party"
-          dataSet={dataSet}
-          titles={titles}
-          colors={colors}
+        <RankingViewer
+          title="출석률 상위 5명"
+          headings={["순위", "이름", "정당", "출석률"]}
+          data={this.state.data.attendanceRateTop5}
         />
+        <RankingViewer
+          title="출석률 하위 5명"
+          headings={["순위", "이름", "정당", "출석률"]}
+          data={this.state.data.attendanceRateBot5}
+        />
+        <div>
+          <PieChart
+            name="members-per-party"
+            dataSet={numOfMembersPerParty}
+            titles={partyNames}
+            colors={colors}
+          />
+        </div>
       </div>
     ) : (
       <div>loading...</div>

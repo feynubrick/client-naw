@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Menu from "./components/Menu";
 import BillDetailController from "./containers/BillDetailController";
-import { Main, MyMNA, MNA, Party, Bill, MNADetail } from "./pages";
+import MNADetail from "./containers/MNADetail";
+import { Main, MyMNA, MNA, Party, Bill } from "./pages";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 

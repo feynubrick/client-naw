@@ -6,15 +6,15 @@ const BasicInfo = ({
   id,
   name,
   chinesename,
-  party_id,
+  party,
   local,
   stdcomt,
   photo,
   phone,
   address,
-  blog,
-  twtr,
-  fb
+  email,
+  mnaUrl,
+  history
 }) => {
   return (
     <div className="container-fluid">
@@ -31,7 +31,9 @@ const BasicInfo = ({
               </tr>
               <tr>
                 <th scope="row">정당</th>
-                <td>{party_id}</td>
+                <td>
+                  <p style={{ color: `${party.color}` }}>{party.name}</p>
+                </td>
               </tr>
               <tr>
                 <th scope="row">지역구</th>
@@ -47,12 +49,16 @@ const BasicInfo = ({
                   </ul>
                 </td>
               </tr>
+              <tr>
+                <th scope="row">약력</th>
+                <td>{history}</td>
+              </tr>
             </tbody>
           </table>
         </div>
         <div className="col-4">
           <img src={photo} alt={`photo_${id}`} className="img-thumbnail" />
-          {[phone, address, blog, twtr, fb].map(info => (
+          {[phone, address, email, mnaUrl].map(info => (
             <SocialButton key={`${info}`} content={info} />
           ))}
         </div>

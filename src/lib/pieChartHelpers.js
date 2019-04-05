@@ -30,7 +30,9 @@ const draw = props => {
     .attr("class", "arc")
     .attr("transform", `translate(${outerRadius}, ${outerRadius})`);
 
-  var color = d3.scaleOrdinal(d3.schemeCategory10);
+  var color = props.colors
+    ? d3.scaleOrdinal(props.colors)
+    : d3.scaleOrdinal(d3.schemeCategory10);
 
   arcs
     .append("path")
@@ -43,9 +45,9 @@ const draw = props => {
   //   .attr("text-anchor", "middle")
   //   .text(d => d.value);
 
-  arcs.on("click", (d, i) => {
-    props.onClick(d, i);
-  });
+  // arcs.on("click", (d, i) => {
+  //   props.onClick(d, i);
+  // });
 };
 
 const update = props => {
