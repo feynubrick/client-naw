@@ -4,7 +4,10 @@ import PartyRankingList from "../components/PartyRankingList";
 import PartyInfo from "../components/PartyInfo";
 import OptionHistogramChart from "../components/OptionHistogramChart";
 import makeHistogramChartData from "../lib/makeHistogramChartData";
+import { draw } from "../lib/histogramHelpers";
 import { partyData } from "./fakedata";
+import PieChart from "../components/PieChart";
+import HistogramChartWrap from "../components/HistogramChartWrap";
 
 class PartyContainer extends Component {
   constructor(props) {
@@ -15,13 +18,20 @@ class PartyContainer extends Component {
       partiesSortByBillSubmitCount: null,
       sortMode: 0,
       mnaList: null,
-      clickedPartyId: 1
+      clickedPartyId: 1,
+      histoDataType: null
     };
 
     this.onClickPartyName = this.onClickPartyName.bind(this);
     this.onClickNumOfMembers = this.onClickNumOfMembers.bind(this);
     this.onClickAttendanceRate = this.onClickAttendanceRate.bind(this);
     this.onClickBillSubmitCount = this.onClickBillSubmitCount.bind(this);
+    this.onClickAttendanceRateButton = this.onClickAttendanceRateButton.bind(
+      this
+    );
+    this.onClickBillSubmitCountButton = this.onClickBillSubmitCountButton.bind(
+      this
+    );
   }
 
   componentDidMount() {
@@ -42,9 +52,12 @@ class PartyContainer extends Component {
       ),
       sortMode: 0,
       mnaList: partyData.mnaList,
-      clickedPartyId: 1
+      clickedPartyId: 1,
+      histoDataType: 0
     });
   }
+
+  componentDidUpdate() {}
 
   sortBy(arr, property) {
     console.log(property);
@@ -79,6 +92,14 @@ class PartyContainer extends Component {
     this.setState({ sortMode: 2 });
   }
 
+  onClickAttendanceRateButton() {
+    this.setState({ histoDataType: 0 });
+  }
+
+  onClickBillSubmitCountButton() {
+    this.setState({ histoDataType: 1 });
+  }
+
   render() {
     switch (this.state.sortMode) {
       case 0:
@@ -99,30 +120,63 @@ class PartyContainer extends Component {
         party => party.id === this.state.clickedPartyId
       )[0];
       var rank = party.rank;
+
+      var numOfMembersPerPartyData = parties.map(party => party.numOfMembers);
+      var numOfMembersPerPartyTitles = parties.map(party => party.name);
+      var numOfMembersPerPartyColors = parties.map(party => party.color);
+      var data =
+        this.state.histoDataType === 0
+          ? this.state.mnaList.map(mna => mna.attendanceRate)
+          : this.state.mnaList.map(mna => mna.billCount);
     }
 
     return this.state.mnaList ? (
-      <Row>
-        <Col md={8}>
-          <PartyRankingList
-            parties={parties}
-            onClickPartyName={this.onClickPartyName}
-            onClickNumOfMembers={this.onClickNumOfMembers}
-            onClickAttendanceRate={this.onClickAttendanceRate}
-            onClickBillSubmitCount={this.onClickBillSubmitCount}
+      <div>
+        <Row>
+          <Col md={8}>
+            <PartyRankingList
+              parties={parties}
+              onClickPartyName={this.onClickPartyName}
+              onClickNumOfMembers={this.onClickNumOfMembers}
+              onClickAttendanceRate={this.onClickAttendanceRate}
+              onClickBillSubmitCount={this.onClickBillSubmitCount}
+            />
+          </Col>
+          <Col md={4}>
+            <PartyInfo party={party} rank={rank} />
+            <div>
+              <h3>정당별 의석 분포</h3>
+              <PieChart
+                name="pie-chart-party-num-of-members"
+                dataSet={numOfMembersPerPartyData}
+                titles={numOfMembersPerPartyTitles}
+                colors={numOfMembersPerPartyColors}
+              />
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={this.onClickAttendanceRateButton}
+          >
+            출석률
+          </button>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={this.onClickBillSubmitCountButton}
+          >
+            법안제출
+          </button>
+          <HistogramChartWrap
+            dataSet={data}
+            chartName="소속의원 분포"
+            name="histogram"
           />
-        </Col>
-        <Col md={4}>
-          <PartyInfo party={party} rank={rank} />
-          {/* <OptionHistogramChart
-            data={makeHistogramChartData(this.state.data.mnaList, "party")}
-            options={[
-              { key: "attendanceRate", comment: "출석률" },
-              { key: "billCount", comment: "의안 제출 수" }
-            ]}
-          /> */}
-        </Col>
-      </Row>
+        </Row>
+      </div>
     ) : (
       <div>now loading...</div>
     );
