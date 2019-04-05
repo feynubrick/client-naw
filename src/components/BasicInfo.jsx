@@ -32,7 +32,7 @@ const BasicInfo = ({
               <tr>
                 <th scope="row">정당</th>
                 <td>
-                  <p style={`color: ${party.color}`}>{party.name}</p>
+                  <p style={{ color: `${party.color}` }}>{party.name}</p>
                 </td>
               </tr>
               <tr>

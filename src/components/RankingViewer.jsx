@@ -19,7 +19,7 @@ const MainPage = ({ title, data, headings }) => {
               <th scope="row">{i + 1}</th>
               <td>{mna.name}</td>
               <td>
-                <p style={`color: "${mna.partyColor}"`}>{mna.party}</p>
+                <p style={{ color: `${mna.partyColor}` }}>{mna.party}</p>
               </td>
               <td>{mna.attendanceRate}</td>
             </tr>

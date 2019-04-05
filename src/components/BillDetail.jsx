@@ -4,29 +4,40 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const BillDetail = function({ bill }) {
   const {
-    id,
+    billId,
     date,
     name,
-    primaryLawMakerName,
+    primaryLawMaker,
     committee,
     status,
     lawMakers,
-    summary
+    summary,
+    linkToNA
   } = bill;
   return (
     <div>
       <div className="display-4 text-center">
-        [{id}] {name}
+        [{billId}] {name}
       </div>
       <div className="display-5 text-center">{committee}</div>
       <div className="text-center">{date} | 국회의안정보시스템</div>
       <BillStatus status={status} />
       <div>
-        <div className="display-5">대표발의: {primaryLawMakerName}</div>
+        <div className="display-5">
+          대표발의: {primaryLawMaker.name} (
+          <p style={{ color: `${primaryLawMaker.party.color}` }}>
+            {primaryLawMaker.party.name}
+          </p>
+          /{primaryLawMaker.chinesename})
+        </div>
         <ul className="list-inline">
           {lawMakers.map(lawMaker => (
             <li key={lawMaker} className="list-inline-item">
-              {lawMaker}
+              {lawMaker.name}(
+              <p style={{ color: `${lawMaker.party.color}` }}>
+                {lawMaker.party.name}
+              </p>
+              /{lawMaker.chinesename})
             </li>
           ))}
         </ul>

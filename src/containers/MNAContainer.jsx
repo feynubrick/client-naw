@@ -16,7 +16,7 @@ export default class MNAContainer extends Component {
     this.setState({ mnaRankList: mnaData });
   }
   render() {
-    return mnaRankList ? (
+    return this.state.mnaRankList ? (
       <div>
         <OptionHistogramChart
           data={makeHistogramChartData(this.state.mnaRankList)}

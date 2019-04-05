@@ -272,50 +272,51 @@ const partyData = {
       color: "#025AAA",
       homepage: "http://theminjoo.kr",
       numOfMembers: 128,
-      attendanceRate: 0.99,
-      billSubmitCount: 22
+      attendanceRate: 0.7,
+      billSubmitCount: 9
     },
     {
       id: 2,
       name: "자유한국당",
       logo:
-        "http://www.libertykoreaparty.kr/images/introduce/logo/colorset.gif",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Logo_of_the_Liberty_Korea_Party.svg/1920px-Logo_of_the_Liberty_Korea_Party.svg.png",
       color: "#C9151E",
       homepage: "http://www.libertykoreaparty.kr",
       numOfMembers: 113,
-      attendanceRate: 0.98,
-      billSubmitCount: 21
+      attendanceRate: 0.2,
+      billSubmitCount: 8
     },
     {
       id: 3,
       name: "바른미래당",
-      logo: "http://bareunmirae.kr/images/content/logo_img1_1.jpg",
+      logo:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Righteous_Future_Party_Logo.svg/1920px-Righteous_Future_Party_Logo.svg.png",
       color: "#00B7B5",
       homepage: "http://bareunmirae.kr",
       numOfMembers: 29,
-      attendanceRate: 0.97,
-      billSubmitCount: 20
+      attendanceRate: 0.9,
+      billSubmitCount: 7
     },
     {
       id: 4,
       name: "민주평화당",
-      logo: "http://peaceparty.or.kr/theme/peace_party/img/logo_fix2.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/b/b7/KPDP2.png",
       color: "#78b600",
       homepage: "http://peaceparty.or.kr",
       numOfMembers: 14,
-      attendanceRate: 0.96,
-      billSubmitCount: 19
+      attendanceRate: 0.4,
+      billSubmitCount: 6
     },
     {
       id: 5,
       name: "정의당",
       logo:
-        "https://www.justice21.org/newhome/asset/images/about/logo_sign2_01.gif",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Jeongeuidang_logo.svg/1920px-Jeongeuidang_logo.svg.png",
       color: "#FFCB08",
       homepage: "https://www.justice21.org",
       numOfMembers: 5,
-      attendanceRate: 0.95,
-      billSubmitCount: 18
+      attendanceRate: 0.5,
+      billSubmitCount: 7
     },
     {
       id: 6,
@@ -324,19 +325,19 @@ const partyData = {
       color: "#808080",
       homepage: "",
       numOfMembers: 7,
-      attendanceRate: 0.94,
-      billSubmitCount: 17
+      attendanceRate: 0.6,
+      billSubmitCount: 8
     },
     {
       id: 7,
       name: "민중당",
       logo:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Logo_of_the_Minjung_Party.svg/330px-Logo_of_the_Minjung_Party.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Logo_of_the_Minjung_Party.svg/1920px-Logo_of_the_Minjung_Party.svg.png",
       color: "#EB5B04",
       homepage: "http://minjungparty.com",
       numOfMembers: 1,
-      attendanceRate: 0.93,
-      billSubmitCount: 16
+      attendanceRate: 0.7,
+      billSubmitCount: 2
     },
     {
       id: 8,
@@ -346,8 +347,8 @@ const partyData = {
       color: "#092C66",
       homepage: "http://gkpp.or.kr",
       numOfMembers: 1,
-      attendanceRate: 0.92,
-      billSubmitCount: 15
+      attendanceRate: 0.1,
+      billSubmitCount: 1
     }
   ],
   mnaList: [
@@ -403,7 +404,7 @@ const billData = {
         party: {
           id: 1,
           name: "더불어민주당",
-          color: "#FFCB08"
+          color: "#025AAA"
         }
       },
       committee: "농림축산식품해양수산위원회",
@@ -421,7 +422,7 @@ const billData = {
         party: {
           id: 1,
           name: "더불어민주당",
-          color: "#FFCB08"
+          color: "#025AAA"
         }
       },
       committee: "정무위원회",
@@ -439,7 +440,7 @@ const billData = {
         party: {
           id: 1,
           name: "더불어민주당",
-          color: "#FFCB08"
+          color: "#025AAA"
         }
       },
       committee: "농림축산식품해양수산위원회",
@@ -525,7 +526,7 @@ const BillDetailData = {
     party: {
       id: 1,
       name: "더불어민주당",
-      color: "#FFCB08"
+      color: "#025AAA"
     }
   },
   committee: "국토교통위원회",
@@ -538,7 +539,7 @@ const BillDetailData = {
       party: {
         id: 1,
         name: "더불어민주당",
-        color: "#FFCB08"
+        color: "#025AAA"
       }
     },
     {
@@ -548,7 +549,7 @@ const BillDetailData = {
       party: {
         id: 1,
         name: "더불어민주당",
-        color: "#FFCB08"
+        color: "#025AAA"
       }
     },
     {
@@ -558,7 +559,7 @@ const BillDetailData = {
       party: {
         id: 1,
         name: "더불어민주당",
-        color: "#FFCB08"
+        color: "#025AAA"
       }
     },
     {
@@ -568,7 +569,7 @@ const BillDetailData = {
       party: {
         id: 1,
         name: "더불어민주당",
-        color: "#FFCB08"
+        color: "#025AAA"
       }
     },
     {
@@ -578,7 +579,7 @@ const BillDetailData = {
       party: {
         id: 1,
         name: "더불어민주당",
-        color: "#FFCB08"
+        color: "#025AAA"
       }
     }
   ],

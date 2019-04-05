@@ -1,5 +1,6 @@
 import React from "react";
 import PieChartController from "../containers/PieChartController";
+import PieChart from "./PieChart";
 import Histogram from "./Histogram";
 import "bootstrap/dist/css/bootstrap.css";
 

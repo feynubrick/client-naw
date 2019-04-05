@@ -1,45 +1,36 @@
 import React from "react";
-import {
-  bills,
-  updateDate,
-  totalNumOfBills,
-  billsPerCommittee
-} from "./fakedataBill";
 import BillList from "../components/BillList";
 import "bootstrap/dist/css/bootstrap.css";
 import PieChart from "../components/PieChart";
+import { billData } from "./fakedata";
 
 class PaginatedBillList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bills: null,
-      updateDate: null,
-      totalNumOfBills: null,
-      billsPerCommittee: null
+      data: null
     };
   }
 
   componentDidMount() {
     this.setState({
-      bills: bills,
-      updateDate: updateDate,
-      totalNumOfBills: totalNumOfBills,
-      billsPerCommittee: billsPerCommittee
+      data: billData
     });
   }
 
   render() {
-    if (this.state.billsPerCommittee) {
-      var dataSet = this.state.billsPerCommittee.map(bill => bill.number);
-      var titles = this.state.billsPerCommittee.map(bill => bill.committee);
+    if (this.state.data) {
+      var dataSet = this.state.data.billsPerCommittee.map(bill => bill.number);
+      var titles = this.state.data.billsPerCommittee.map(
+        bill => bill.committee
+      );
     }
 
-    return this.state.bills ? (
+    return this.state.data ? (
       <div className={`container`}>
-        <h1>20대 국회 접수의안 총 {this.state.totalNumOfBills}개</h1>
+        <h1>20대 국회 접수의안 총 {this.state.data.totalNumOfBills}개</h1>
         <h2>
-          최신 업데이트 : {this.state.updateDate} | 자료출처 : 국회
+          최신 업데이트 : {this.state.data.updateDate} | 자료출처 : 국회
           의안정보시스템
         </h2>
         <p>
@@ -53,7 +44,7 @@ class PaginatedBillList extends React.Component {
           dataSet={dataSet}
           titles={titles}
         />
-        <BillList bills={bills} />
+        <BillList bills={this.state.data.bills} />
       </div>
     ) : null;
   }
