@@ -15,7 +15,8 @@ export default function makeChartData(data, groupBy) {
         acc.max = curr.billCount;
       }
       return acc;
-    }, {
+    },
+    {
       min: Infinity,
       max: 0
     }
@@ -26,8 +27,8 @@ export default function makeChartData(data, groupBy) {
     });
     result["billCount"].push({
       name: `~ ${Math.floor(
-            ((billCountYDomain.max - billCountYDomain.min) / 10) * i
-          ) + billCountYDomain.min}`
+        ((billCountYDomain.max - billCountYDomain.min) / 10) * i
+      ) + billCountYDomain.min}`
     });
   }
 
@@ -39,12 +40,11 @@ export default function makeChartData(data, groupBy) {
     if (!result.billCount["group"].includes(data[group])) {
       result.billCount["group"].push(data[group]);
     }
-    console.log(result.billCount["group"], "!")
+    console.log(result.billCount["group"], "!");
     const attendanceIndex = Math.floor(data.attendanceRate / 10) - 1;
     let billIndex =
       Math.floor(
-        data.billCount /
-        ((billCountYDomain.max - billCountYDomain.min) / 10)
+        data.billCount / ((billCountYDomain.max - billCountYDomain.min) / 10)
       ) - 1;
 
     if (billIndex < 0) billIndex++;
