@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const MemberDropDownMenu = () => {
   return (
     <div className="dropdown dropleft">
@@ -14,8 +14,12 @@ const MemberDropDownMenu = () => {
         <i class="fas fa-user" />
       </button>
       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <span className="dropdown-item">로그인</span>
-        <span className="dropdown-item">회원가입</span>
+        <Link to="/login">
+          <span className="dropdown-item">로그인</span>
+        </Link>
+        <Link to="/signin">
+          <span className="dropdown-item">회원가입</span>
+        </Link>
       </div>
     </div>
   );
