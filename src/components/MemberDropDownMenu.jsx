@@ -4,14 +4,14 @@ const MemberDropDownMenu = () => {
   return (
     <div className="dropdown dropleft">
       <button
-        class="btn btn-light dropdown-toggle"
+        className="btn btn-light dropdown-toggle"
         type="button"
         id="dropdownMenuButton"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
       >
-        <i class="fas fa-user" />
+        <i className="fas fa-user" />
       </button>
       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <Link to="/login">
