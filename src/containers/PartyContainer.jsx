@@ -161,14 +161,22 @@ class PartyContainer extends Component {
           <Col>
             <button
               type="button"
-              className="btn btn-primary"
+              className={
+                this.state.histoDataType === 0
+                  ? "btn btn-primary"
+                  : "btn btn-secondary"
+              }
               onClick={this.onClickAttendanceRateButton}
             >
               출석률
             </button>
             <button
               type="button"
-              className="btn btn-primary"
+              className={
+                this.state.histoDataType === 1
+                  ? "btn btn-primary"
+                  : "btn btn-secondary"
+              }
               onClick={this.onClickBillSubmitCountButton}
             >
               법안제출

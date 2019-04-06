@@ -24,19 +24,19 @@ const BillDetail = function({ bill }) {
       <BillStatus status={status} />
       <div>
         <div className="display-5">
-          대표발의: {primaryLawMaker.name} (
-          <p style={{ color: `${primaryLawMaker.party.color}` }}>
+          대표발의: {primaryLawMaker.name}(
+          <span style={{ color: `${primaryLawMaker.party.color}` }}>
             {primaryLawMaker.party.name}
-          </p>
+          </span>
           /{primaryLawMaker.chinesename})
         </div>
         <ul className="list-inline">
           {lawMakers.map(lawMaker => (
             <li key={lawMaker} className="list-inline-item">
               {lawMaker.name}(
-              <p style={{ color: `${lawMaker.party.color}` }}>
+              <span style={{ color: `${lawMaker.party.color}` }}>
                 {lawMaker.party.name}
-              </p>
+              </span>
               /{lawMaker.chinesename})
             </li>
           ))}

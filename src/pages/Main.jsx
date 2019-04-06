@@ -4,7 +4,6 @@ import MainPageController from "../containers/MainPageController";
 const Main = () => {
   return (
     <div>
-      Mainpage
       <MainPageController />
     </div>
   );

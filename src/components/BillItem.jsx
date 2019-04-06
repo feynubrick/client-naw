@@ -2,21 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 
-const BillItem = ({
-  id,
-  date,
-  name,
-  primaryLawMakerName,
-  committee,
-  status
-}) => {
+const BillItem = ({ id, date, name, primaryLawMaker, committee, status }) => {
   return (
     <tr>
       <td>{date}</td>
       <td>
         <Link to={`/bill/${id}`}>{name}</Link>
       </td>
-      <td>{primaryLawMakerName}</td>
+      <td>
+        {primaryLawMaker.name}
+        <span style={{ color: primaryLawMaker.party.color }}>
+          ({primaryLawMaker.party.name})
+        </span>
+      </td>
       <td>{committee}</td>
       <td>{status}</td>
     </tr>
