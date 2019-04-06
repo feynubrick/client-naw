@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Loginbutton from "./LoginButton";
+import MemberDropDownMenu from "./MemberDropDownMenu";
 const Menu = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light">
@@ -43,7 +43,7 @@ const Menu = () => {
         </ul>
         <ul className="navbar-nav mt-2 mt-md-0">
           <li className="nav-item">
-            <Loginbutton />
+            <MemberDropDownMenu />
           </li>
         </ul>
       </div>

@@ -4,7 +4,8 @@ import Menu from "./components/Menu";
 import BillDetailController from "./containers/BillDetailController";
 import MNADetail from "./containers/MNADetail";
 import { Main, MyMNA, MNA, Party, Bill } from "./pages";
-import { Container } from "react-bootstrap";
+import SignIn from "./pages/SignIn";
+import Login from "./pages/Login";
 import "bootstrap/dist/css/bootstrap.css";
 
 class App extends Component {
@@ -21,6 +22,8 @@ class App extends Component {
             <Route path="/party" component={Party} />
             <Route path="/bill/:billId" component={BillDetailController} />
             <Route path="/bill" component={Bill} />
+            <Route path="/signin" component={SignIn} />
+            <Route path="/login" component={Login} />
           </Switch>
         </div>
       </div>
