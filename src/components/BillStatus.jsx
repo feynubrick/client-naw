@@ -16,7 +16,7 @@ const BillStatus = function(props) {
     "공포"
   ];
   return (
-    <div className="display-5 text-center">
+    <div className="display-5 my-4 text-center">
       {status.map((stat, i) => (
         <span key={i}>
           <BillStatusIcon title={stat} now={props.status === stat} />
