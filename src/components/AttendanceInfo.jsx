@@ -12,7 +12,7 @@ const AttendanceInfo = ({
   return (
     <div>
       <h1>의원 출석정보</h1>
-      <h2 style={`color: ${party.color}`}>
+      <h2 style={{ color: `${party.color}` }}>
         {name} / {party.name}
       </h2>
       <div className="row">

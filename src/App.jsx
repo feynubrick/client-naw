@@ -16,7 +16,6 @@ class App extends Component {
         <div className="mt-4 container">
           <Switch>
             <Route exact path="/" component={Main} />
-            <Route path="/mymna" component={MyMNA} />
             <Route path="/mna/:mnaId" component={MNADetail} />
             <Route path="/mna" component={MNA} />
             <Route path="/party" component={Party} />

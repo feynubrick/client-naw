@@ -54,7 +54,7 @@ const MNABillInfo = ({
           <PieChart
             name={`pie-chart-bill-status-mna-${id}`}
             dataSet={billsPerStatusValues}
-            title={billsPerStatusTitles}
+            titles={billsPerStatusTitles}
           />
         </div>
       </div>
