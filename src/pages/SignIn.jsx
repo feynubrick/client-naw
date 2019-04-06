@@ -31,7 +31,6 @@ export default class SignIn extends Component {
         passwordInput
       })
       .then(res => {
-        console.log(res);
         if (res.data.result === "Success") {
           this.props.history.push("/login");
         }
