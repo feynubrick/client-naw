@@ -29,16 +29,16 @@ export default class MNADetail extends React.Component {
     // this.setState({ mnaData: mnaDetailData });
   }
 
-  componentDidUpdate() {
-    axios
-      .get(`${serverUrl}/mna/${this.state.mnaId}`)
-      .then(res => {
-        this.setState({ mnaData: res.data });
-      })
-      .catch(err => {
-        console.log(`ERROR occurred!!! => ${err.message}`);
-      });
-  }
+  // componentDidUpdate() {
+  //   axios
+  //     .get(`${serverUrl}/mna/${this.state.mnaId}`)
+  //     .then(res => {
+  //       this.setState({ mnaData: res.data });
+  //     })
+  //     .catch(err => {
+  //       console.log(`ERROR occurred!!! => ${err.message}`);
+  //     });
+  // }
 
   render() {
     return this.state.mnaData ? (

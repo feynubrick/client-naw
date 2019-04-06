@@ -11,8 +11,8 @@ const SessionAttendanceViewer = ({
   return (
     <div className="col">
       <h2>{sessionType}</h2>
-      출석률 {rate * 100}% ({position}위/{totalNumOfMNA}명)
-      <table className="table">
+      출석률 {(rate * 100).toFixed(2)}% ({position}위)
+      {/* <table className="table">
         <thead>
           <tr>
             <th scope="col">날짜</th>
@@ -29,7 +29,7 @@ const SessionAttendanceViewer = ({
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 };
