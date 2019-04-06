@@ -1,9 +1,9 @@
 import * as d3 from "d3";
 
-const w = 600;
+const w = 500;
 const h = 300;
-const outerRadius = w / 2 / 2;
-const innerRadius = w / 2 / 6;
+const outerRadius = (w - 200) / 2;
+const innerRadius = (w - 200) / 6;
 var legendRectSize = 15; // defines the size of the colored squares in legend
 var legendSpacing = 6; // defines spacing between squares
 
@@ -51,7 +51,7 @@ const draw = props => {
       var height = legendRectSize + legendSpacing; // height of element is the height of the colored square plus the spacing
       var offset = (height * color.domain().length) / 2; // vertical offset of the entire legend = height of a single element & half the total number of elements
       var horz = 2 * outerRadius + 20; // the legend is shifted to the left to make room for the text
-      var vert = i * height + 20; // the top of the element is hifted up or down from the center using the offset defiend earlier and the index of the current element 'i'
+      var vert = i * height + 60; // the top of the element is hifted up or down from the center using the offset defiend earlier and the index of the current element 'i'
       return "translate(" + horz + "," + vert + ")"; //return translation
     });
 
