@@ -9,7 +9,7 @@ const MNARankingItem = ({ item }) => {
     <tr>
       <td>{rank}</td>
       <td>
-        <NavLink className="nav-link" to={`/mymna/${id}`}>
+        <NavLink className="nav-link" to={`/mna/${id}`}>
           {mnaName}
         </NavLink>
       </td>
