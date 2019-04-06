@@ -17,9 +17,9 @@ const BasicInfo = ({
   history
 }) => {
   return (
-    <div className="container-fluid">
+    <div className="mt-5 container-fluid shadow-lg p-3 mb-5 bg-white rounded">
       <h2>기본정보</h2>
-      <div className="row">
+      <div className="row ">
         <div className="col-8">
           <table className="table">
             <tbody>

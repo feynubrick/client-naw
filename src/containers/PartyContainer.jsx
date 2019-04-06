@@ -131,9 +131,9 @@ class PartyContainer extends Component {
     }
 
     return this.state.mnaList ? (
-      <div>
+      <div className="mt-5 container">
         <Row>
-          <Col md={6}>
+          <Col className="mt-5" md={6}>
             <PartyRankingList
               parties={parties}
               onClickPartyName={this.onClickPartyName}
@@ -142,7 +142,7 @@ class PartyContainer extends Component {
               onClickBillSubmitCount={this.onClickBillSubmitCount}
             />
           </Col>
-          <Col md={6}>
+          <Col className="mt-5" md={6}>
             <div>
               <h3>정당별 의석 분포</h3>
               <PieChart
@@ -154,7 +154,7 @@ class PartyContainer extends Component {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row className="shadow-lg p-4 mb-5 bg-white rounded">
           <Col>
             <PartyInfo party={party} rank={rank} />
           </Col>

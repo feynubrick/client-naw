@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const MainPage = ({ title, data, headings }) => {
   return (
-    <div>
+    <div className="shadow-lg p-3 mb-5 bg-white rounded">
       <h2>{title}</h2>
       <table className="table">
         <thead>

@@ -2,7 +2,7 @@ import React from "react";
 import MNARankingItem from "./MNARankingItem";
 const MNARankingList = ({ data }) => {
   return (
-    <table className="table">
+    <table className="table mt-3">
       <thead>
         <tr>
           <th scope="col">순위</th>
