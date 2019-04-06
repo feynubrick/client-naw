@@ -133,7 +133,7 @@ class PartyContainer extends Component {
     return this.state.mnaList ? (
       <div>
         <Row>
-          <Col md={8}>
+          <Col md={6}>
             <PartyRankingList
               parties={parties}
               onClickPartyName={this.onClickPartyName}
@@ -142,8 +142,7 @@ class PartyContainer extends Component {
               onClickBillSubmitCount={this.onClickBillSubmitCount}
             />
           </Col>
-          <Col md={4}>
-            <PartyInfo party={party} rank={rank} />
+          <Col md={6}>
             <div>
               <h3>정당별 의석 분포</h3>
               <PieChart
@@ -156,25 +155,30 @@ class PartyContainer extends Component {
           </Col>
         </Row>
         <Row>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={this.onClickAttendanceRateButton}
-          >
-            출석률
-          </button>
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={this.onClickBillSubmitCountButton}
-          >
-            법안제출
-          </button>
-          <HistogramChartWrap
-            dataSet={data}
-            chartName="소속의원 분포"
-            name="histogram"
-          />
+          <Col>
+            <PartyInfo party={party} rank={rank} />
+          </Col>
+          <Col>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={this.onClickAttendanceRateButton}
+            >
+              출석률
+            </button>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={this.onClickBillSubmitCountButton}
+            >
+              법안제출
+            </button>
+            <HistogramChartWrap
+              dataSet={data}
+              chartName="소속의원 분포"
+              name="histogram"
+            />
+          </Col>
         </Row>
       </div>
     ) : (

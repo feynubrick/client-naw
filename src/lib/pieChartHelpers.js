@@ -1,9 +1,9 @@
 import * as d3 from "d3";
 
-const w = 500;
-const h = 300;
-const outerRadius = (w - 200) / 2;
-const innerRadius = (w - 200) / 6;
+const w = 800;
+const h = 600;
+const outerRadius = (w - 300) / 2;
+const innerRadius = (w - 300) / 6;
 var legendRectSize = 15; // defines the size of the colored squares in legend
 var legendSpacing = 6; // defines spacing between squares
 
@@ -67,14 +67,14 @@ const draw = props => {
     .attr("x", legendRectSize + legendSpacing)
     .attr("y", legendRectSize - legendSpacing)
     .text(function(d, i) {
-      return props.titles[i];
+      return `${props.titles[i]} (${props.dataSet[i]})`;
     }); // return label
 
-  arcs
-    .append("text")
-    .attr("transform", d => `translate(${arc.centroid(d)})`)
-    .attr("text-anchor", "middle")
-    .text(d => d.value);
+  // arcs
+  //   .append("text")
+  //   .attr("transform", d => `translate(${arc.centroid(d)})`)
+  //   .attr("text-anchor", "middle")
+  //   .text(d => d.value);
 
   // arcs.on("click", (d, i) => {
   //   props.onClick(d, i);
