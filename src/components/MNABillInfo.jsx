@@ -22,8 +22,6 @@ const MNABillInfo = ({
 
   return (
     <div>
-      <h2>MNABillInfo</h2>
-      <h3>{`mnaName: ${name}, mnaId: ${id}`}</h3>
       <div className="row">
         <div className="col">
           <table>
@@ -31,15 +29,15 @@ const MNABillInfo = ({
               <tr>
                 <th scope="col">법안제출</th>
                 <td>
-                  {stdcomtBillSubmitCount}회 ({stdcomtBillSubmitCountPosition}위
-                  / {totalNumOfMNA})
+                  {stdcomtBillSubmitCount}회 ({stdcomtBillSubmitCountPosition}
+                  위)
                 </td>
               </tr>
               <tr>
                 <th scope="col">법안통과율</th>
                 <td>
-                  {stdcomtAttendanceRate}% ({stdcomtAttendanceRatePosition}위 /{" "}
-                  {totalNumOfMNA})
+                  {(stdcomtAttendanceRate * 100).toFixed(2)}% (
+                  {stdcomtAttendanceRatePosition}위)
                 </td>
               </tr>
             </tbody>
