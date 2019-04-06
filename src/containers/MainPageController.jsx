@@ -28,7 +28,7 @@ export default class MainPageController extends React.Component {
 
     return this.state.data ? (
       <div>
-        <div>
+        <div style={{ minHeight: "80vh" }} className="container pt-5">
           <h2>정당별 의석수</h2>
           <PieChart
             name="members-per-party"
@@ -37,20 +37,27 @@ export default class MainPageController extends React.Component {
             colors={colors}
           />
         </div>
-        <div className="row">
-          <div className="col">
-            <RankingViewer
-              title="출석률 상위 5명"
-              headings={["순위", "이름", "정당", "출석률"]}
-              data={this.state.data.attendanceRateTop5}
-            />
-          </div>
-          <div className="col">
-            <RankingViewer
-              title="출석률 하위 5명"
-              headings={["순위", "이름", "정당", "출석률"]}
-              data={this.state.data.attendanceRateBot5}
-            />
+        <div className="bg-light">
+          <div style={{ minHeight: "80vh" }} className="container">
+            <div className="row pt-5">
+              <div className="col-12 text-center">
+                <h1>가장 열심히 출석한 의원은?</h1>
+              </div>
+              <div className="col mt-5">
+                <RankingViewer
+                  title="출석률 상위 5명"
+                  headings={["순위", "이름", "정당", "출석률"]}
+                  data={this.state.data.attendanceRateTop5}
+                />
+              </div>
+              <div className="col mt-5">
+                <RankingViewer
+                  title="출석률 하위 5명"
+                  headings={["순위", "이름", "정당", "출석률"]}
+                  data={this.state.data.attendanceRateBot5}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

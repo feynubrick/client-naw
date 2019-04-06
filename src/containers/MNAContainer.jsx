@@ -49,38 +49,51 @@ export default class MNAContainer extends Component {
     }
 
     return this.state.mnaList ? (
-      <div>
-        <button
-          type="button"
-          className={
-            this.state.histoDataType === 0
-              ? "btn btn-primary"
-              : "btn btn-secondary"
-          }
-          onClick={this.onClickAttendanceRateButton}
-        >
-          출석률
-        </button>
-        <button
-          type="button"
-          className={
-            this.state.histoDataType === 1
-              ? "btn btn-primary"
-              : "btn btn-secondary"
-          }
-          onClick={this.onClickBillSubmitCountButton}
-        >
-          법안제출
-        </button>
-        <HistogramChartWrap
-          dataSet={data}
-          chartName="의원 분포"
-          name="histogram"
-        />
-        <MNARankingList data={this.state.mnaList} />
+      <div className="container">
+        <div className="row mt-5 shadow-lg p-3 mb-5 bg-white rounded">
+          <div className="col">
+            <button
+              type="button"
+              className={
+                this.state.histoDataType === 0
+                  ? "btn btn-primary"
+                  : "btn btn-secondary"
+              }
+              onClick={this.onClickAttendanceRateButton}
+            >
+              출석률
+            </button>
+            <button
+              type="button"
+              className={
+                this.state.histoDataType === 1
+                  ? "btn btn-primary"
+                  : "btn btn-secondary"
+              }
+              onClick={this.onClickBillSubmitCountButton}
+            >
+              법안제출
+            </button>
+          </div>
+          <div className="col">
+            <HistogramChartWrap
+              dataSet={data}
+              chartName="의원 분포"
+              name="histogram"
+            />
+          </div>
+        </div>
+        <div className="mt-5 shadow-lg p-3 mb-5 bg-white rounded">
+          <h1>의원 명단</h1>
+          <MNARankingList data={this.state.mnaList} />
+        </div>
       </div>
     ) : (
-      <div>now loading...</div>
+      <div class="d-flex justify-content-center mt-5">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
     );
   }
 }

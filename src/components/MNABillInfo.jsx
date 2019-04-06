@@ -22,9 +22,10 @@ const MNABillInfo = ({
 
   return (
     <div>
-      <div className="row">
-        <div className="col">
-          <table>
+      <div className="row shadow-lg p-3 mb-5 bg-white rounded">
+        <div className="col-12">
+          <h3>법안 제출 정보</h3>
+          <table className="my-4">
             <tbody>
               <tr>
                 <th scope="col">법안제출</th>
@@ -42,13 +43,15 @@ const MNABillInfo = ({
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className="col d-flex justify-content-center">
           <PieChart
             name={`pie-chart-bill-type-mna-${id}`}
             dataSet={billsPerCommitteeValues}
             titles={billsPerCommitteeTitles}
           />
         </div>
-        <div className="col">
+        <div className="col d-flex justify-content-center">
           <PieChart
             name={`pie-chart-bill-status-mna-${id}`}
             dataSet={billsPerStatusValues}

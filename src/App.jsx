@@ -13,18 +13,17 @@ class App extends Component {
     return (
       <div>
         <Menu />
-        <div className="mt-4 container">
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route path="/mna/:mnaId" component={MNADetail} />
-            <Route path="/mna" component={MNA} />
-            <Route path="/party" component={Party} />
-            <Route path="/bill/:billId" component={BillDetailController} />
-            <Route path="/bill" component={Bill} />
-            <Route path="/signin" component={SignIn} />
-            <Route path="/login" component={Login} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route path="/mymna" component={MyMNA} />
+          <Route path="/mna/:mnaId" component={MNADetail} />
+          <Route path="/mna" component={MNA} />
+          <Route path="/party" component={Party} />
+          <Route path="/bill/:billId" component={BillDetailController} />
+          <Route path="/bill" component={Bill} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/login" component={Login} />
+        </Switch>
       </div>
     );
   }
