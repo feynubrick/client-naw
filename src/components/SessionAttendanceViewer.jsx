@@ -10,7 +10,6 @@ const SessionAttendanceViewer = ({
 }) => {
   return (
     <div className="col">
-      <h1>SessionAttendanceViewer</h1>
       <h2>{sessionType}</h2>
       출석률 {rate * 100}% ({position}위/{totalNumOfMNA}명)
       <table className="table">

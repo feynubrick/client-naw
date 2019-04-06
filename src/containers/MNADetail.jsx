@@ -2,6 +2,8 @@ import React from "react";
 import BasicInfo from "../components/BasicInfo";
 import AttendanceInfo from "../components/AttendanceInfo";
 import MNABillInfo from "../components/MNABillInfo";
+import axios from "axios";
+import serverUrl from "../serverInfo";
 import { mnaDetailData } from "./fakedata";
 
 export default class MNADetail extends React.Component {
@@ -31,8 +33,10 @@ export default class MNADetail extends React.Component {
       <div>
         <BasicInfo {...this.state.mnaData} />
         <AttendanceInfo {...this.state.mnaData} />
-        <MNABillInfo mnaId={this.props.mnaId} />
+        <MNABillInfo {...this.state.mnaData} />
       </div>
-    ) : null;
+    ) : (
+      <div>loading...</div>
+    );
   }
 }
