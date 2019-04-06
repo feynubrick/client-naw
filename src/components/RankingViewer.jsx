@@ -5,7 +5,7 @@ const MainPage = ({ title, data, headings }) => {
   return (
     <div>
       <h2>{title}</h2>
-      <table>
+      <table className="table">
         <thead>
           <tr>
             {headings.map(text => (
