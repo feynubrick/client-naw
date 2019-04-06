@@ -8,7 +8,7 @@ const MNARankingItem = ({ item }) => {
       <td>{rank}</td>
       <td>{mnaName}</td>
       <td>{party}</td>
-      <td>{attendanceRate}</td>
+      <td>{`${(attendanceRate * 100).toFixed(2)} %`}</td>
       <td>{billCount}</td>
     </tr>
   );

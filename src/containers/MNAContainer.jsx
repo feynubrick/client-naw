@@ -3,7 +3,8 @@ import OptionHistogramChart from "../components/OptionHistogramChart";
 import MNARankingList from "../components/MNARankingList";
 import HistogramChartWrap from "../components/HistogramChartWrap";
 import { mnaData } from "./fakedata";
-
+import axios from "axios";
+import serverUrl from "../serverInfo";
 export default class MNAContainer extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +22,14 @@ export default class MNAContainer extends Component {
   }
 
   componentDidMount() {
-    this.setState({ mnaList: mnaData, histoDataType: 0 });
+    axios
+      .get(`${serverUrl}/mna`)
+      .then(res => {
+        this.setState({ mnaList: res.data, histoDataType: 0 });
+      })
+      .catch(err => {
+        console.log(`ERROR occurred!!! => ${err.message}`);
+      });
   }
 
   onClickAttendanceRateButton() {
@@ -44,14 +52,22 @@ export default class MNAContainer extends Component {
       <div>
         <button
           type="button"
-          className="btn btn-primary"
+          className={
+            this.state.histoDataType === 0
+              ? "btn btn-primary"
+              : "btn btn-secondary"
+          }
           onClick={this.onClickAttendanceRateButton}
         >
           출석률
         </button>
         <button
           type="button"
-          className="btn btn-primary"
+          className={
+            this.state.histoDataType === 1
+              ? "btn btn-primary"
+              : "btn btn-secondary"
+          }
           onClick={this.onClickBillSubmitCountButton}
         >
           법안제출
